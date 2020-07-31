@@ -12,14 +12,14 @@ opens a CLI tool for creating your class
 ! : show help for demanded section
 / : go back
 
-###shellmode
+### shellmode  
 `class <classname>` :creates a class named classname and opens it
 
-###buildClass
+### buildClass  
 choose a category of members to edit `[pri]vate`, `[pro]tected` or `[pub]lic`
 
-###editCategory
+### editCategory  
 enter declaration line of your variable or your function
 
-###getVar
+### getVar  
 enter a string composed of either of `gsc` for getter, setter or constructor for the previously created variable
