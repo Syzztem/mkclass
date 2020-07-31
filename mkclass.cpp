@@ -6,7 +6,7 @@
 /*   By: lothieve <lothieve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/30 10:01:32 by lothieve          #+#    #+#             */
-/*   Updated: 2020/06/01 11:55:26 by lothieve         ###   ########.fr       */
+/*   Updated: 2020/07/28 14:28:43 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <exception>
 #include <string.h>
 
-
 using std::string;
 using std::ofstream;
+void shellmode();
 
 void write_cpp(ofstream& file, const string name)
 {
@@ -27,6 +27,7 @@ void write_cpp(ofstream& file, const string name)
     name << "::" << name << "(const " << name << " &other) {*this = other;}\n" << std::endl <<
     name << "::" << name << "()\n{\n\n}\n" << std::endl <<
     name << "& " << name << "::" << "operator = (const " << name << "& other)\n{\n\n}\n" << std::endl;
+	file.close();
 }
 
 void write_hpp(ofstream& file, const string name)
@@ -71,6 +72,8 @@ void mkclass(string name)
 
 int main(int ac, char **av)
 {
+	if (ac == 1)
+		shellmode();
     for (int i = 1; i < ac; i++)
         mkclass(av[i]);
 }
